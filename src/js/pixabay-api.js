@@ -6,7 +6,7 @@ let images = [];
 function fetchData() {
     const input = document.querySelector('.text');
     const inputValue = input.value;
-    const link = `https://pixabay.com/api/?key=42659935-3ef7103821fe0025c24926046&q=${inputValue}&image_type=photo&orientation=horizontal&safesearch=true`;
+    const link = `https://pixabay.com/api/?key=42659935-3ef7103821fe0025c24926046&q=${inputValue}&image_type=photo&orientation=horizontal&safesearch=true&min_height="340"&min_width="250"`;
 
     return fetch(link)
         .then(response => {

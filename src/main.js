@@ -25,13 +25,8 @@ submit.addEventListener("submit", function (event) {
 
     fetchData()
         .then(data => {
-            if (data.hits.length === 0) {
-                iziToast.show({
-                    message: 'Sorry, there are no images matching your search query. Please try again ',
-                    color: 'red',
-                    position: "topRight"
-                });
-            } else {
+            
+            
                 const images = data.hits; 
                 galleryUl.insertAdjacentHTML("afterbegin", createLi(images));
                 const lightbox = new SimpleLightbox('.gallery a', {
@@ -39,7 +34,7 @@ submit.addEventListener("submit", function (event) {
                     captionDelay: 250
                 });
                 lightbox.refresh()
-            }
+             input.value = null;
         })
         .catch(error => console.error('Error:', error))
         .finally(() => {
